@@ -23,7 +23,7 @@ with open('body_language.pkl', 'rb') as f:
 
 cap = cv2.VideoCapture(0)
 # Initiate holistic model
-with mp_holistic.Holistic(min_detection_confidence=0.5, min_tracking_confidence=0.5) as holistic:
+with mp_holistic.Holistic(min_detection_confidence=0.9, min_tracking_confidence=0.5) as holistic:
     
     while cap.isOpened():
         ret, frame = cap.read()
@@ -116,7 +116,7 @@ with mp_holistic.Holistic(min_detection_confidence=0.5, min_tracking_confidence=
             
             # Concate rows
             row = pose_row+face_row
-            
+            #row=pose_row
 #             # Append class name 
 #             row.insert(0, class_name)
             
